@@ -1,0 +1,181 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 2 versions,> 1%,not dead
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+body {
+    background-color: bisque;
+    color: bisque;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+a, a:hover {
+    color: inherit;
+    text-decoration: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden
+}
+
+.contain-fold {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 350px;
+    margin: -175px auto 0;
+}
+
+.fold {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #D2B48C;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) inset;
+}
+
+.fold div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 50%;
+    overflow: hidden
+}
+
+.fold div img {
+    border-radius: 10px;
+}
+
+.fold .shadow-top {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) inset;
+    border-radius: 10px;
+}
+
+.fold .bottom {
+    bottom: 0;
+    top: 50%;
+    transform: perspective(700px) rotateX(0deg);
+    transform-origin: top;
+    transition: transform 1s;
+}
+
+.fold .bottom img {
+    margin-top: -35%
+}
+
+.fold .shadow-bottom {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.fold:hover .bottom {
+    transform: perspective(700px) rotateX(65deg);
+    transform-origin: top;
+    transition: all 1s cubic-bezier(0.075, 0.45, 0.165, 1)
+}
+
+.fold:hover .shadow-bottom {
+    opacity: 1;
+    transition: all 1s cubic-bezier(0.075, 0.45, 0.165, 1);
+}
+
+.fold .description {
+    top: 80%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-left: 40px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.description .flex-right {
+    position: relative;
+    margin-top: 5px;
+}
+
+.flex-right a {
+    margin-right: 10px
+}
+
+footer {
+    color: #D2B48C;
+    position: absolute;
+    width: 250px;
+    top: 90%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 525px) {
+    .contain-fold, .fold, .fold .top img, .fold .bottom img {
+        width: 350px;
+        height: 200px
+    }
+    .fold .bottom {
+        top: 50%;
+    }
+    .fold .bottom img {
+        margin-top: -29%
+    }
+    .fold .description {
+        top: 75%;
+        padding-left: 15px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .description .flex-right {
+        position: relative;
+        margin-top: 8px;
+    }
+
+    .flex-right a {
+        margin-right: 5px
+    }
+    .flex-right img {
+        width: 28px
+    }
+}
